@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:alaiye_travel/screen/stream_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:alaiye_travel/style.dart';
 
@@ -74,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               //Search phase
-              Container(
+              /*Container(
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
@@ -94,127 +96,135 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10),*/
               //Activities phase
               Expanded(
-                child: ListView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      overflow: Overflow.visible,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          width: size.width,
-                          height: size.height * 0.3,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/stream.jpg"),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, CupertinoPageRoute(builder: (context) => StreamPage()));
+                        },
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              width: size.width,
+                              height: size.height * 0.3,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("assets/images/stream.jpg"),
+                                ),
+                              ),
                             ),
-                          ),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
-                            child: Container(
-                              color: Colors.black.withOpacity(0),
+                            Text(
+                              "Çay",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Poppins",
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
-                          ),
+                          ],
                         ),
-                        Text(
-                          "Çay",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "Poppins",
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        )
-                      ],
-                    ),
-                    Stack(
-                      alignment: Alignment.center,
-                      overflow: Overflow.visible,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          width: size.width,
-                          height: size.height * 0.3,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/mall.jpg"),
+                      ),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 15),
+                            width: size.width,
+                            height: size.height * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage("assets/images/cafe.jpg"),
+                              ),
                             ),
                           ),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
-                            child: Container(
-                              color: Colors.black.withOpacity(0),
+                          Text(
+                            "Kafe",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: "Poppins",
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
-                        ),
-                        Text(
-                          "AVM",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "Poppins",
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        )
-                      ],
-                    ),
-                    Stack(
-                      alignment: Alignment.center,
-                      overflow: Overflow.visible,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          width: size.width,
-                          height: size.height * 0.3,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("assets/images/boat_tour.jpg"),
+                        ],
+                      ),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 15),
+                            width: size.width,
+                            height: size.height * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage("assets/images/mall.jpg"),
+                              ),
                             ),
                           ),
-                        ),
-                        Text(
-                          "Tekne Turu",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "Poppins",
-                            fontSize: 30,
-                            fontWeight: FontWeight.w700,
+                          Text(
+                            "AVM",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: "Poppins",
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 15),
+                            width: size.width,
+                            height: size.height * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage("assets/images/tour.jpg"),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            "Turlar",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: "Poppins",
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
+
             ],
           ),
         ),
       ),
     );
-  }
-
-  String listText(List<String> wallpaper) {
-    if (wallpaper[0] == "stream") {
-      return "Çay";
-    } else if (wallpaper[1] == "mall") {
-      return "Alışveriş Merkezi";
-    } else if (wallpaper[2] == "boat_tour") {
-      return "Tekne Turu";
-    }
   }
 
   Future changeLanguage(String currentLanguage, String targetLanguage) async {
