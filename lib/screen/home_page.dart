@@ -1,6 +1,7 @@
 import 'dart:ui';
 
-import 'package:alaiye_travel/screen/stream_page.dart';
+import 'file:///D:/myapps/flutter_app_test/alaiye_travel/lib/screen/stream/stream_main_page.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:alaiye_travel/style.dart';
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       GestureDetector(
                         onTap: (){
-                          Navigator.push(context, CupertinoPageRoute(builder: (context) => StreamPage()));
+                          Navigator.push(context, CupertinoPageRoute(builder: (context) => StreamMainPage()));
                         },
                         child: Stack(
                           alignment: Alignment.center,
@@ -123,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Text(
-                              "Çay",
+                              "Dim Çayı",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: "Poppins",
